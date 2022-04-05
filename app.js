@@ -7,15 +7,14 @@ console.log("EXERCISE 1:\n==========\n");
 const watching = new Promise((resolve, reject) => {
 let userLeft = Math.round(Math.random()); //added after class to simulate true or false instead of leaving undefined
     if (userLeft == true) {
-        reject("User left");
+        reject(new Error ("User left"));
     } else {
         resolve("Thumbs up and subscribe!");
     }
 });
 
 watching.then((value) => {
-    console.log(value)
+    console.log(value.msg)
 }) .catch((error) => {
-        console.log(error)
+        console.log(error.message)//message added after going over in class
 });
-
